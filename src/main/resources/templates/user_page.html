@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>Chat App</header>
+<div class="container">
+    <div class="menu">
+        <a href="register">Rejestracja</a>
+        <a href="login">Logowanie</a>
+        <a href="chat">Chat</a>
+    </div>
+    <div class="content">
+        Zalogowany jako: <span th:text="${user}"></span>
+        <a href="logout"> Logout</a>
+        <a href="chat"> Chat</a>
+    </div>
+</div>
+<footer>Stopka</footer>
+</body>
+</html>

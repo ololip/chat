@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>Chat App</header>
+<div class="container">
+    <div class="menu">
+        <a href="register">Rejestracja</a>
+        <a href="login">Logowanie</a>
+        <a href="chat">Chat</a>
+    </div>
+    <div class="content">
+        <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+            <div class="form-group">
+                <label>User Name</label>
+                <input type="text" th:field="*{login}" placeholder="User Name" />
+            </div>
+            <div th:if="${#fields.hasErrors('login')}" style="color:red">Nieprawidłowy login, minimum 3 znaki</div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" th:field="*{password}" placeholder="Password" />
+                <div th:if="${#fields.hasErrors('password')}" style="color:red">Nieprawidłowe hasło, minimum 3 znaki</div>
+                <br/>
+                <label>Confirm password</label>
+                <input type="password" th:field="*{confirmPassword}" placeholder="Confirm password" />
+                <div th:if="${#fields.hasErrors('confirmPassword')}" style="color:red">Hasła nie mogą się różnić</div>
+            </div>
+
+            <input type="submit" value="Register" /> <input type="reset" value="Reset" />
+        </form>
+    </div>
+</div>
+<footer>Stopka</footer>
+</body>
+</html>
